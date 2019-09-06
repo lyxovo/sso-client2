@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script  type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+
+</head>
+<body>
+<h1>{我是测试首页}-clinet2。</h1>
+<h2 id="welcome"></h2>
+<h3><span id="username"></span>||
+<span id="order"></span>||
+||<span><button type="button" onclick="order()">【点击，如果其他系统没有登录，那这会跳到登录页面，否则可以访问。】</button></span>
+
+</h3>
+
+
+</body>
+
+<script type="text/javascript">
+
+//拿这个token,去查询看是否登录。
+var u_token=$.cookie("u_token");
+
+
+//获取模拟order信息
+function order(){
+	location.href="http://localhost:8082/order/queryOrder";
+}
+
+
+</script>
+
+</html>
+
